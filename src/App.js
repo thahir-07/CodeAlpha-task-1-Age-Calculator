@@ -3,7 +3,7 @@ import './App.css';
 
 function App() {
   const [birthDate, setBirthDate]=useState("");
-  const [years, setYears]=useState("");
+  const [years, setYears]=useState(null);
 
   function calculateDate(birthDate){
     const currentDate= new Date();
@@ -25,7 +25,7 @@ function App() {
           setBirthDate(e.target.value);
         }}/><br/>
         <button type='secondary' className='btn' onClick={update}>Calculate Age</button>
-        {years?<h3>You are {years} years old</h3>:""}
+        {years!=null && years>=0?<h3>You are {years} years old</h3>:""}
     </div>
   );
 }
